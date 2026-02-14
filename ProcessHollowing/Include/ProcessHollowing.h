@@ -1,4 +1,5 @@
-﻿#include <Windows.h>
+﻿#pragma once
+#include <Windows.h>
 #include <cstdio>
 #include <winternl.h>
 #include <wininet.h>
