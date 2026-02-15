@@ -30,29 +30,29 @@ typedef struct IMAGE_RELOCATION_ENTRY {
 class Process
 {
 public:
-	BOOL Hollow(const LPSTR lpSourceImage, const LPSTR lpTargetProcess);
-	BOOL Hollow(const std::vector<uint8_t> Bytes, const LPSTR lpTargetProcess);
+	static BOOL Hollow(const LPSTR lpSourceImage, const LPSTR lpTargetProcess);
+	static BOOL Hollow(const std::vector<uint8_t> Bytes, const LPSTR lpTargetProcess);
 
 
 private:
-	HANDLE GetFileContent(const LPSTR lpFilePath);
-	BOOL IsValidPE(const LPVOID lpImage);
-	BOOL IsPE32(const LPVOID lpImage);
-	ProcessAddressInformation GetProcessAddressInformation32(const PPROCESS_INFORMATION lpPI);
-	ProcessAddressInformation GetProcessAddressInformation64(const PPROCESS_INFORMATION lpPI);
-	DWORD GetSubsytem32(const LPVOID lpImage);
-	DWORD GetSubsytem64(const LPVOID lpImage);
-	DWORD GetSubsystemEx32(const HANDLE hProcess, const LPVOID lpImageBaseAddress);
-	DWORD GetSubsystemEx64(const HANDLE hProcess, const LPVOID lpImageBaseAddress);
-	void CleanAndExitProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hFileContent);
-	void CleanProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hFileContent);
-	BOOL HasRelocation32(const LPVOID lpImage);
-	BOOL HasRelocation64(const LPVOID lpImage);
-	IMAGE_DATA_DIRECTORY GetRelocAddress32(const LPVOID lpImage);
-	IMAGE_DATA_DIRECTORY GetRelocAddress64(const LPVOID lpImage);
-	BOOL RunPE32(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
-	BOOL RunPE64(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
-	BOOL RunPEReloc32(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
-	BOOL RunPEReloc64(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
-	LPVOID GetFileContentFromBytes(const std::vector<std::uint8_t>& data);
+	static HANDLE GetFileContent(const LPSTR lpFilePath);
+	static BOOL IsValidPE(const LPVOID lpImage);
+	static BOOL IsPE32(const LPVOID lpImage);
+	static ProcessAddressInformation GetProcessAddressInformation32(const PPROCESS_INFORMATION lpPI);
+	static ProcessAddressInformation GetProcessAddressInformation64(const PPROCESS_INFORMATION lpPI);
+	static DWORD GetSubsytem32(const LPVOID lpImage);
+	static DWORD GetSubsytem64(const LPVOID lpImage);
+	static DWORD GetSubsystemEx32(const HANDLE hProcess, const LPVOID lpImageBaseAddress);
+	static DWORD GetSubsystemEx64(const HANDLE hProcess, const LPVOID lpImageBaseAddress);
+	static void CleanAndExitProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hFileContent);
+	static void CleanProcess(const LPPROCESS_INFORMATION lpPI, const HANDLE hFileContent);
+	static BOOL HasRelocation32(const LPVOID lpImage);
+	static BOOL HasRelocation64(const LPVOID lpImage);
+	static IMAGE_DATA_DIRECTORY GetRelocAddress32(const LPVOID lpImage);
+	static IMAGE_DATA_DIRECTORY GetRelocAddress64(const LPVOID lpImage);
+	static BOOL RunPE32(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
+	static BOOL RunPE64(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
+	static BOOL RunPEReloc32(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
+	static BOOL RunPEReloc64(const LPPROCESS_INFORMATION lpPI, const LPVOID lpImage);
+	static LPVOID GetFileContentFromBytes(const std::vector<std::uint8_t>& data);
 };
