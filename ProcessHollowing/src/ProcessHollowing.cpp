@@ -706,7 +706,7 @@ BOOL Process::Hollow(const std::vector<uint8_t> Bytes, const LPSTR lpTargetProce
 	}
 
 
-	lpSourceImage = (LPSTR)GetFileContentFromBytes(Bytes);
+	auto lpSourceImage = (LPSTR)GetFileContentFromBytes(Bytes);
 	if (lpSourceImage == nullptr) {
 		 printf("[-] Failed to allocate memory for the PE file content.\n");
 		 return FALSE;

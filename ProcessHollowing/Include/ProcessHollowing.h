@@ -11,9 +11,7 @@
 #pragma comment(lib, "wininet.lib")
 #pragma comment(lib, "crypt32.lib")
 
-LPSTR lpSourceImage;
 
-// Structure to store the address process infromation.
 struct ProcessAddressInformation
 {
 	LPVOID lpProcessPEBAddress;
